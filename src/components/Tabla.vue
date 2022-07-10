@@ -21,7 +21,7 @@ export default {
             console.log(value)
             value = value.toLowerCase();
             this.personajes = this.personajes.filter(item =>
-                item.name | item.status | item.species | item.gender | item.origin.name | item.location.name.toLowerCase().indexOf(value) !== -1
+                item.name.toLowerCase().indexOf(value) !== -1
             )       
 
             this.texto = value;
@@ -72,7 +72,7 @@ export default {
          <div class="flitrosperso pv" >
             <img class="pvivos" src="../assets/img/Icono de vivo.png" alt="camera">
             <p class="pvivos" >Personajes vivos</p>
-            <p class="pvivos" >{{personajes.forEach(e => e.status)}}</p>
+            <p class="pvivos" >{{personajes.length}}</p>
             
         </div>
          <div class="flitrosperso pm" > 
