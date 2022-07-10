@@ -7,7 +7,7 @@ export default {
       el:'#perso',
       personajes :  [],
       texto:'',
-      arrayfiltrado: []
+      //arrayfiltrado: []
       
 
     };
@@ -20,12 +20,15 @@ export default {
         set(value){
             console.log(value)
             value = value.toLowerCase();
-            this.arrayfiltrado = this.personajes.filter(item =>
+            this.personajes = this.personajes.filter(item =>
                 item.name.toLowerCase().indexOf(value) !== -1
             )
 
             this.texto = value;
+           
         }
+            
+
     }
   },
 
@@ -69,13 +72,13 @@ export default {
          <div class="flitrosperso pv" >
             <img class="pvivos" src="../assets/img/Icono de vivo.png" alt="camera">
             <p class="pvivos" >Personajes vivos</p>
-            <p class="pvivos" >8</p>
+            <p class="pvivos" >{{personajes.forEach(e => e.status)}}</p>
             
         </div>
          <div class="flitrosperso pm" > 
             <img class="pmuertos" src="../assets/img/Icono de muerto.png" alt="camera">
             <p class="pmuertos">Personajes muertos</p>
-            <p class="pvivos" >6</p>
+            <p class="pvivos" >{{personajes.forEach(e => e.status)}}</p>
         </div>
 
         <input class="flitrosperso pm" placeholder="Buscar" v-model="filtro">
@@ -101,7 +104,7 @@ export default {
                     </tr>
                     </thead>
                     <tbody class="bodye"> 
-                        <tr class="bodye" v-for="i in arrayfiltrado">
+                        <tr class="bodye" v-for="i in personajes">
                         <td>{{i.name}}</td>
                         <td>{{i.status}}</td>
                         <td>{{i.species}}</td>
