@@ -21,8 +21,8 @@ export default {
             console.log(value)
             value = value.toLowerCase();
             this.personajes = this.personajes.filter(item =>
-                item.name.toLowerCase().indexOf(value) !== -1
-            )
+                item.name | item.status | item.species | item.gender | item.origin.name | item.location.name.toLowerCase().indexOf(value) !== -1
+            )       
 
             this.texto = value;
            
@@ -216,9 +216,13 @@ h2{
 
 table{
     
-    width: 1800px;
-    border-top-left-radius: 20px;
-    border-top-right-radius: 20px;
+
+    border: 2px solid lightgray;
+    padding:24px;
+    width: calc(100%-2rem);
+    border-radius: 5px;
+    box-sizing: border-box;
+    margin: 1rem;
    
 }
 
@@ -229,11 +233,11 @@ table{
 .alltable{
  
     border: 2px solid lightgray;
-    margin-left: 32px;
     padding:24px;
-    width: 1900px;
-    margin-bottom: 20px;
+    width: calc(100%-2rem);
     border-radius: 5px;
+    box-sizing: border-box;
+    margin: 1rem;
 }
 
 .laimg{
