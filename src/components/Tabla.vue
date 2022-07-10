@@ -8,10 +8,26 @@ export default {
       personajes :  [],
       texto:'',
       //arrayfiltrado: []
-      
+     
 
     };
   },
+
+  methods: {
+    formatDate : (fecha) => {
+        let date = new Date(fecha)
+        let day = `${(date.getDate())}`.padStart(2,'0');
+        let month = `${(date.getMonth()+1)}`.padStart(2,'0');
+        let year = date.getFullYear();
+        
+        return `${day}/${month}/${year}`
+    }
+
+  },
+  
+  
+
+
   computed: {
     filtro:{
         get(){
@@ -27,9 +43,10 @@ export default {
             this.texto = value;
            
         }
-            
+          
 
-    }
+    },
+
   },
 
   created(){
@@ -112,7 +129,7 @@ export default {
                         <td>{{i.origin.name}}</td>
                         <td>{{i.location.name}}</td>
                         <td>{{i.episode.length}}</td>
-                        <td>{{i.created}}</td>
+                        <td>{{formatDate(i.created)}}</td>
                         <td>                           
                             <div>
                                 <img :src="i.image" alt="personaje" class="laimg">
