@@ -161,10 +161,6 @@ export default {
     display: inline-block; 
 }
 
-.contenedor{
-    margin-bottom: 24px;
-}
-
 .flitrosperso{
     display: inline-block; 
     border: 2px solid lightgray;
