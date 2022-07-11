@@ -22,7 +22,7 @@ export default {
         
         return `${day}/${month}/${year}`
     }
-
+ 
   },
   
   
@@ -89,13 +89,13 @@ export default {
          <div class="flitrosperso pv" >
             <img class="pvivos" src="../assets/img/Icono de vivo.png" alt="camera">
             <p class="pvivos" >Personajes vivos</p>
-            <p class="pvivos" >{{personajes.length}}</p>
+            <p class="pvivos" >8</p>
             
         </div>
          <div class="flitrosperso pm" > 
             <img class="pmuertos" src="../assets/img/Icono de muerto.png" alt="camera">
             <p class="pmuertos">Personajes muertos</p>
-            <p class="pvivos" >{{personajes.forEach(e => e.status)}}</p>
+            <p class="pvivos" >6</p>
         </div>
 
         <input class="flitrosperso pm" placeholder="Buscar" v-model="filtro">
