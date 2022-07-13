@@ -123,7 +123,15 @@ export default {
                     <tbody class="bodye"> 
                         <tr class="bodye" v-for="i in personajes">
                         <td>{{i.name}}</td>
-                        <td>{{i.status}}</td>
+                        <td>
+                         <span v-if="i.status == 'Alive'">
+                            <img src="../assets/img/Icono de vivo.png" >
+                         </span>
+                           <span v-if="i.status == 'Dead'">
+                            <img src="../assets/img/Icono de muerto.png" >
+                         </span>
+                        
+                        </td>
                         <td>{{i.species}}</td>
                         <td>{{i.gender}}</td>
                         <td>{{i.origin.name}}</td>
